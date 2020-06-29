@@ -1,42 +1,51 @@
 import * as firebase from "firebase";
 
-
+const firebaseConfig = {
+	apiKey: "AIzaSyCiq_P4lU8zPhbuf30GhotcXrWSjleFspk",
+	authDomain: "expensify-app-af7b3.firebaseapp.com",
+	databaseURL: "https://expensify-app-af7b3.firebaseio.com",
+	projectId: "expensify-app-af7b3",
+	storageBucket: "expensify-app-af7b3.appspot.com",
+	messagingSenderId: "522969163719",
+	appId: "1:522969163719:web:39e2cec81702df76aa5be2"
+};
 
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().on("value", (snapshot) => {
-	const data = snapshot.val();
-	console.log(`${data.name} is a ${data.job.title} at ${data.job.company}`);
-});
+export { firebase, database as default };
 
-setTimeout(() => {
-	database.ref().update({
-		"job/company": "Google"
-	});
-}, 2000);
-
-// database.ref().set({
-// 	name: "Kerri-Ann",
-// 	age: 31,
-// 	stressLevel: 6,
-// 	job: {
-// 		title: "Software Developer",
-// 		"company": "Google"
-// 	},
-// 	location: {
-// 		city: "Orlando",
-// 		state: "Florida"
-// 	}
-// }).then(() => {
-// 	console.log("Data was saved");
-// }).catch((error) => {
-// 	console.log("This failed:", error);
+// database.ref("expenses").on("value", (snapshot) => {
+// 	const expenses = [];
+// 	snapshot.forEach((childsnapshot) => {
+// 		expenses.push({
+// 			id: childsnapshot.key,
+// 			...childsnapshot.val()
+// 		})
+// 	});
+// 	console.log(expenses);
 // });
 
-// database.ref().update({
-// 	stressLevel: 9,
-// 	"job/company": "Amazon",
-// 	"location/city": "Seattle"
+// database.ref("expenses/-MAhAQ9QyG0ZA1eudvul").update({
+// 	description: "Groceries"
+// });
+
+// database.ref("expenses").push({
+// 	description: "Rent",
+// 	note: "",
+// 	createAt: 230,
+// 	amount: 11390
+// });
+// database.ref("expenses").push({
+// 	description: "Gas",
+// 	note: "",
+// 	createAt: 23034,
+// 	amount: 3600
+// });
+// database.ref("expenses").push({
+// 	description: "Coffee",
+// 	note: "",
+// 	createAt: 243,
+// 	amount: 23
 // });
