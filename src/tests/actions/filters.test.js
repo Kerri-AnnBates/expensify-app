@@ -1,5 +1,5 @@
 import moment from "moment";
-import { setStartDate, setEndDate, setTextFilter, sortByDate, sortByAmout } from "../../actions/filters";
+import { setStartDate, setEndDate, setTextFilter, sortByDate, sortByAmount } from "../../actions/filters";
 
 test("should generate set start date action object", () => {
 	const action = setStartDate(moment(0));
@@ -41,7 +41,7 @@ test("should generate date action object setting sort by date", () => {
 });
 
 test("should generate action object to set sort type by amount", () => {
-	const action = sortByAmout();
+	const action = sortByAmount();
 	expect(action).toEqual({
 		type: "SORT_BY_AMOUNT"
 	});
