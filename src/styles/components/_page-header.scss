@@ -13,6 +13,11 @@
 	}
 }
 
+.page-header__subtitle {
+	color     : $light-grey;
+	font-style: italic;
+}
+
 .page-header__actions {
 	margin-top: $m-size;
 }
