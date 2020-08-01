@@ -1,6 +1,6 @@
 # Expensify App
 
-App can be found at [title](https://www.example.comhttps://expensify-app-kb.herokuapp.com/)
+App can be found at [expensify-app-kb.herokuapp.com](https://expensify-app-kb.herokuapp.com/)
 
 This simple application demonstrates the foundation for React apps. To begin, Webpack configurations was used to set up the development environment for the application.
 
